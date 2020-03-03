@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+		
+		
+		
+		stage('Git-CheckOut') {
+			steps {
+				git 'https://github.com/umangsaltuniv/samplejenkinspipeline2.git'
+			}
+		}
+		
+		stage('Compile') {
+			steps {
+				bat 'Compile.bat';
+			}
+		}
+
+		stage('Build') {
+			steps {
+				bat 'Build.bat';
+			}
+		}
+		
+    }
+	
+}
